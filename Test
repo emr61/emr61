@@ -1,1 +1,26 @@
-Test
+<!DOCTYPE html>
+<html>
+<body
+<button onclick="getLocation()">Konumu Bul</button>
+
+<p id="lng_lat"></p>
+
+<script>
+var lbl = document.getElementById("lng_lat");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    lbl.innerHTML = "Tarayıcınız bu özelliği desteklemiyor!";
+  }
+}
+
+function showPosition(position) {
+  lbl.innerHTML = "Enlem: " + position.coords.latitude + 
+  "<br>Boylam: " + position.coords.longitude;
+}
+</script>
+
+</body>
+</html>
